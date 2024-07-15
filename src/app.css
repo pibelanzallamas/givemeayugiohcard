@@ -42,4 +42,22 @@ main {
   font-family: dayram;
 }
 
+.button {
+  margin-top: 1rem;
+}
+.button button {
+  background-color: inherit;
+  border: solid 1px white;
+  border-radius: 15px;
+  padding: 0.9rem;
+  font-family: dayram;
+  color: white;
+  font-size: 2rem;
+}
+.button button:hover {
+  color: orange;
+  border: solid 1px orange;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=app.css.map */
