@@ -36,7 +36,9 @@ function App() {
         <div className="card">
           <h3>{card.name}</h3>
           <figure className="image">
-            <img src={card.url} alt={card.name} />
+            <a href={card.url} target="_blank">
+              <img src={card.url} alt={card.name} />
+            </a>
           </figure>
         </div>
       )}
