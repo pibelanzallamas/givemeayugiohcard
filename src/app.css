@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  min-height: 100vh;
+  background-color: orange;
+  background-image: url("./assets/yugioh-back-card.png");
+  background-size: 16.6%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+}
+.title figure {
+  width: 4rem;
+}
+.title figure img {
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+}
+.title p {
+  font-size: 1.4rem;
+}
+
+/*# sourceMappingURL=app.css.map */
