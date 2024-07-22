@@ -15,9 +15,7 @@ function App() {
         setCard({ name: res.data.name, url });
         setGet(true);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => console.log(err));
   }
 
   return (
@@ -29,9 +27,11 @@ function App() {
         </figure>
         <p>card</p>
       </div>
-      <div className="button">
-        <button onClick={randomYuGiOh}>Get random!</button>
-      </div>
+      {!card.name && (
+        <div className="button">
+          <button onClick={randomYuGiOh}>Get random!</button>
+        </div>
+      )}
       {get && (
         <div className="card">
           <h3>{card.name}</h3>
