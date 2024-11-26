@@ -4,7 +4,7 @@ Yu-Gi-Oh! Randomizer!
 
 [Demo](https://www.youtube.com/watch?v=NEzQ7VnWCLI)
 
-[Back-End](https://github.com/pibelanzallamas/yu-gi-oh-back)
+[Back-End](https://github.com/pibelanzallamas/yugioh-back)
 
 _**Español**_
 
