@@ -8,21 +8,20 @@ function App() {
   const [card, setCard] = useState({ name: "", url: "" });
   const [loading, setLoading] = useState(false);
 
-  function randomYuGiOh() {
+  const randomYuGiOh = async () => {
     setLoading(true);
-    axios
-      .get("https://db.ygoprodeck.com/api/v7/randomcard.php")
-      .then((res) => {
-        const url = res.data.card_images[0].image_url;
-        setCard({ name: res.data.name, url });
+    try {
+      const resp = await axios.get("https://yugioh-back.onrender.com/");
+      if (resp.data) {
+        const card = resp.data.data[0];
         setGet(true);
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("sory erro", err);
-      });
+        setCard({ name: card.name, url: card.card_images[0].image_url });
+      }
+    } catch (e) {
+      console.log(e);
+    }
     setLoading(false);
-  }
+  };
 
   return (
     <main>
