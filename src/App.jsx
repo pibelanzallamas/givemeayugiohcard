@@ -9,6 +9,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   function randomYuGiOh() {
+    setLoading(true);
     axios
       .get("https://db.ygoprodeck.com/api/v7/randomcard.php")
       .then((res) => {
@@ -20,22 +21,8 @@ function App() {
         console.log(err);
         alert("sory erro", err);
       });
-  }
-
-  const y = async () => {
-    setLoading(true);
-    try {
-      const r = await axios.get(
-        "https://db.ygoprodeck.com/api/v7/randomcard.php"
-      );
-
-      setCard(r);
-    } catch (e) {
-      console.log(e);
-      alert("sorry");
-    }
     setLoading(false);
-  };
+  }
 
   return (
     <main>
