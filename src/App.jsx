@@ -6,6 +6,7 @@ import axios from "axios";
 function App() {
   const [get, setGet] = useState(false);
   const [card, setCard] = useState({ name: "", url: "" });
+  const [loading, setLoading] = useState(false);
 
   function randomYuGiOh() {
     axios
@@ -15,8 +16,26 @@ function App() {
         setCard({ name: res.data.name, url });
         setGet(true);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        alert("sory erro", err);
+      });
   }
+
+  const y = async () => {
+    setLoading(true);
+    try {
+      const r = await axios.get(
+        "https://db.ygoprodeck.com/api/v7/randomcard.php"
+      );
+
+      setCard(r);
+    } catch (e) {
+      console.log(e);
+      alert("sorry");
+    }
+    setLoading(false);
+  };
 
   return (
     <main>
@@ -27,11 +46,14 @@ function App() {
         </figure>
         <p>card</p>
       </div>
-      {!card.name && (
-        <div className="button">
-          <button onClick={randomYuGiOh}>Get random!</button>
-        </div>
-      )}
+      {!card.name &&
+        (loading ? (
+          <p>Loading...</p>
+        ) : (
+          <div className="button">
+            <button onClick={randomYuGiOh}>Get random!</button>
+          </div>
+        ))}
       {get && (
         <div className="card">
           <h3>{card.name}</h3>
