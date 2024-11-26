@@ -34,7 +34,7 @@ function App() {
       </div>
       {!card.name &&
         (loading ? (
-          <p>Loading...</p>
+          <span class="loader"></span>
         ) : (
           <div className="button">
             <button onClick={randomYuGiOh}>Get random!</button>
