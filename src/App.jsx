@@ -32,14 +32,16 @@ function App() {
         </figure>
         <p>card</p>
       </div>
-      {!card.name &&
-        (loading ? (
-          <span class="loader"></span>
-        ) : (
-          <div className="button">
-            <button onClick={randomYuGiOh}>Get random!</button>
-          </div>
-        ))}
+      <div style={{ flex: "1" }}>
+        {!card.name &&
+          (loading ? (
+            <span class="loader"></span>
+          ) : (
+            <div className="button" style={{ flex: "1" }}>
+              <button onClick={randomYuGiOh}>Get random!</button>
+            </div>
+          ))}
+      </div>
       {get && (
         <div className="card">
           <h3>{card.name}</h3>
@@ -50,6 +52,9 @@ function App() {
           </figure>
         </div>
       )}
+      <footer className="top">
+        <p>Developed by pibelanzallamas 🔥</p>
+      </footer>
     </main>
   );
 }
